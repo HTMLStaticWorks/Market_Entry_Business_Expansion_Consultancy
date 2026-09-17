@@ -1,0 +1,46 @@
+/* 
+==================================================
+  RTL STYLES
+================================================== 
+*/
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .navbar-premium .navbar-nav {
+  margin-left: auto;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 15px;
+}
+
+[dir="rtl"] .footer-links a:hover {
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .ps-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
+}
+[dir="rtl"] .pe-4 {
+  padding-left: 1.5rem !important;
+  padding-right: 0 !important;
+}
+
+/* logical properties should be used for margin/padding ideally, 
+but for bootstrap resets in RTL this helps */

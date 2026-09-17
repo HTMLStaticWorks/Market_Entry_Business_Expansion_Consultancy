@@ -1,0 +1,38 @@
+/* 
+==================================================
+  DARK MODE STYLES
+================================================== 
+*/
+
+[data-theme="dark"] {
+  --bg-main: #0B151C;
+  --bg-secondary: #0D1A23;
+  --bg-card: #12232C;
+  
+  --text-primary: #F4F7F6;
+  --text-secondary: #A9B5BA;
+  
+  --border-color: rgba(255,255,255,0.05);
+}
+
+[data-theme="dark"] .navbar-premium {
+  background-color: rgba(11, 21, 28, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .hero-bg-pattern {
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .premium-card {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .btn-premium-outline {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+[data-theme="dark"] .btn-premium-outline:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
