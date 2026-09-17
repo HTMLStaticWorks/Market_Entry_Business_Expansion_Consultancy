@@ -127,7 +127,8 @@ img {
   border: 1px solid var(--primary-color);
 }
 
-.btn-premium-outline:hover {
+.btn-premium-outline:hover,
+.btn-check:checked + .btn-premium-outline {
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -477,8 +478,9 @@ img {
     left: 12px;
     top: 100%;
   }
+
   .navbar-nav {
-      align-items: flex-start;
+    align-items: flex-start;
   }
 }
 
@@ -497,6 +499,90 @@ img {
 
   .text-start {
     text-align: center !important;
+  }
+
+  /* 1. Footer align left */
+  .footer-premium,
+  .footer-premium p,
+  .footer-premium h1,
+  .footer-premium h2,
+  .footer-premium h3,
+  .footer-premium h4,
+  .footer-premium h5,
+  .footer-premium h6,
+  .footer-premium .text-start,
+  .footer-premium .text-md-end,
+  .footer-premium ul {
+    text-align: left !important;
+  }
+
+  [dir="rtl"] .footer-premium,
+  [dir="rtl"] .footer-premium p,
+  [dir="rtl"] .footer-premium h1,
+  [dir="rtl"] .footer-premium h2,
+  [dir="rtl"] .footer-premium h3,
+  [dir="rtl"] .footer-premium h4,
+  [dir="rtl"] .footer-premium h5,
+  [dir="rtl"] .footer-premium h6,
+  [dir="rtl"] .footer-premium .text-start,
+  [dir="rtl"] .footer-premium .text-md-end,
+  [dir="rtl"] .footer-premium ul {
+    text-align: right !important;
+  }
+
+  /* Center specific section elements in mobile */
+  section .eyebrow,
+  section .text-accent,
+  section li,
+  section ul.list-unstyled,
+  .premium-card {
+    text-align: center !important;
+  }
+  
+  .premium-card {
+    padding: 1.5rem !important;
+  }
+
+  .form-control, .form-select {
+    font-size: 16px !important;
+    max-width: 100%;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    text-align-last: left !important;
+  }
+  
+  .form-select option {
+    text-align: left !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  [dir="rtl"] .form-control, [dir="rtl"] .form-select, [dir="rtl"] .form-select option {
+    text-align: right !important;
+    text-align-last: right !important;
+  }
+
+  section span.eyebrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center lists and flex items (like 01 Understand, get in touch icons) */
+  section .d-flex.align-items-start,
+  section ul.list-unstyled .d-flex,
+  section .d-flex.align-items-center:not(.hero-content *):not(.navbar-brand):not(#mainNav *) {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  section .d-flex>.me-3,
+  section .d-flex>.me-4 {
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
 }
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -79,12 +79,24 @@
                     </div>
                     <div class="mb-3 text-start">
                         <label class="form-label fw-bold text-dark">Target Market</label>
-                        <select class="form-select">
-                            <option>APAC</option>
-                            <option>EMEA</option>
-                            <option>Americas</option>
-                            <option>Other / Unsure</option>
-                        </select>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="targetMarket" id="marketApac" autocomplete="off" checked>
+                                <label class="btn btn-premium-outline w-100" for="marketApac">APAC</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="targetMarket" id="marketEmea" autocomplete="off">
+                                <label class="btn btn-premium-outline w-100" for="marketEmea">EMEA</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="targetMarket" id="marketAmericas" autocomplete="off">
+                                <label class="btn btn-premium-outline w-100" for="marketAmericas">Americas</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="targetMarket" id="marketOther" autocomplete="off">
+                                <label class="btn btn-premium-outline w-100" for="marketOther">Other / Unsure</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-4 text-start">
                         <label class="form-label fw-bold text-dark">Business Email</label>

@@ -23,7 +23,8 @@
   padding-right: 5px;
 }
 
-[dir="rtl"] .ms-auto {
+[dir="rtl"] .ms-auto,
+[dir="rtl"] .ms-xl-auto {
   margin-right: auto !important;
   margin-left: 0 !important;
 }
@@ -64,9 +65,14 @@ but for bootstrap resets in RTL this helps */
   text-align: left !important;
 }
 
-[dir="rtl"] .me-1, [dir="rtl"] .me-2, [dir="rtl"] .me-3, [dir="rtl"] .me-4, [dir="rtl"] .me-5 {
+[dir="rtl"] .me-1, [dir="rtl"] .me-3, [dir="rtl"] .me-4, [dir="rtl"] .me-5 {
   margin-right: 0 !important;
   margin-left: var(--bs-spacer, 1rem) !important;
+}
+
+[dir="rtl"] .me-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
 }
 /* 8. rtl mode all section pages remove underline for buttons */
 [dir="rtl"] .btn,
