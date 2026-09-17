@@ -44,3 +44,54 @@
 
 /* logical properties should be used for margin/padding ideally, 
 but for bootstrap resets in RTL this helps */
+
+/* Custom RTL Fixes */
+/* 7. rtl mode all content align properly */
+[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .me-1, [dir="rtl"] .me-2, [dir="rtl"] .me-3, [dir="rtl"] .me-4, [dir="rtl"] .me-5 {
+  margin-right: 0 !important;
+  margin-left: var(--bs-spacer, 1rem) !important;
+}
+/* 8. rtl mode all section pages remove underline for buttons */
+[dir="rtl"] .btn,
+[dir="rtl"] .btn-premium,
+[dir="rtl"] .btn-premium-outline,
+[dir="rtl"] a {
+  text-decoration: none !important;
+}
+
+@media (min-width: 1200px) {
+    [dir="rtl"] #mainNav > .d-flex {
+        justify-content: flex-start !important;
+    }
+}
+
+/* Accordion RTL Fix */
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Fix Expansion Challenge Offset in RTL */
+@media (min-width: 992px) {
+    [dir="rtl"] .offset-lg-1 {
+        margin-left: 0 !important;
+        margin-right: 8.33333333%;
+    }
+}
