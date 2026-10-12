@@ -6,45 +6,94 @@
 
 [data-theme="dark"] {
   --bg-main: #0B151C;
-  --bg-secondary: #0D1A23;
-  --bg-card: #12232C;
+  --bg-secondary: #13222D;
+  --bg-card: #182C38;
   
   --text-primary: #F4F7F6;
-  --text-secondary: #A9B5BA;
+  --text-secondary: #B0BFC7;
   
-  --border-color: rgba(255,255,255,0.05);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
 }
 
 [data-theme="dark"] .navbar-premium {
   background-color: rgba(11, 21, 28, 0.95);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .hero-bg-pattern {
-  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* Header Action Buttons (Theme, RTL, and CTA) in Dark Mode */
+[data-theme="dark"] .header-btn,
+[data-theme="dark"] #theme-toggle,
+[data-theme="dark"] #rtl-toggle {
+  background-color: var(--bg-card) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .header-btn:hover,
+[data-theme="dark"] #theme-toggle:hover,
+[data-theme="dark"] #rtl-toggle:hover {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+}
+
+/* 7. Differentiate sections in Dark Mode with appropriate backgrounds & contrast */
+[data-theme="dark"] section {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .bg-light-alt,
+[data-theme="dark"] section.bg-light-alt {
+  background-color: var(--bg-secondary) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="dark"] .premium-card {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .premium-card:hover {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* Final CTA Section in Dark Mode */
+[data-theme="dark"] section[style*="background-color: var(--primary-color)"],
+[data-theme="dark"] .cta-section {
+  background-color: #0E2333 !important;
+  border-top: 1px solid rgba(201, 164, 92, 0.25);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+/* Footer in Dark Mode */
+[data-theme="dark"] .footer-premium {
+  background-color: #070E13 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .btn-premium-outline {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
+
 [data-theme="dark"] .btn-premium-outline:hover,
 [data-theme="dark"] .btn-check:checked + .btn-premium-outline {
   background-color: var(--accent-color);
   color: #fff;
-}
-
-/* 9. dark mode all age all section should be dark and text must be visible */
-[data-theme="dark"] body,
-[data-theme="dark"] section,
-[data-theme="dark"] .bg-light,
-[data-theme="dark"] .bg-light-alt {
-  background-color: var(--bg-main) !important;
-  color: var(--text-primary) !important;
 }
 
 [data-theme="dark"] h1, 
@@ -55,7 +104,7 @@
 [data-theme="dark"] h6,
 [data-theme="dark"] p,
 [data-theme="dark"] span:not(.text-accent, .eyebrow) {
-  color: var(--text-primary) !important;
+  color: var(--text-primary);
 }
 
 [data-theme="dark"] .text-muted,

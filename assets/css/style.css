@@ -53,32 +53,61 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 600 !important;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
-h1 {
+h1,
+.display-3,
+.display-4 {
   font-size: var(--h1-size);
-  font-weight: 600;
-  line-height: 1.1;
+  font-weight: 600 !important;
+  line-height: 1.15;
 }
 
 h2 {
   font-size: var(--h2-size);
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
 h3 {
   font-size: var(--h3-size);
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
 h4 {
   font-size: var(--h4-size);
-  font-weight: 500;
+  font-weight: 600 !important;
+}
+
+p,
+.lead,
+.text-secondary,
+.accordion-body {
+  font-weight: 450;
+}
+
+.fw-bold {
+  font-weight: 600 !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
 }
 
 a {
@@ -102,16 +131,18 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
+  padding: 12px 26px;
+  min-height: 44px;
   background-color: var(--primary-color);
   color: #fff;
   font-weight: 500;
   font-family: var(--font-body);
-  border-radius: var(--border-radius-btn);
+  border-radius: 8px;
   border: 1px solid transparent;
   transition: var(--transition-smooth);
   cursor: pointer;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
 }
 
 .btn-premium:hover {
@@ -131,6 +162,54 @@ img {
 .btn-check:checked + .btn-premium-outline {
   background-color: var(--primary-color);
   color: #fff;
+}
+
+/* Header Action Buttons (Theme, RTL, and CTA) - Uniform Height & Corner Radius */
+.navbar-premium .btn-premium {
+  height: 44px;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.header-btn,
+#theme-toggle,
+#rtl-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
+  width: 44px !important;
+  min-width: 44px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: var(--bg-card);
+  color: var(--text-primary) !important;
+  font-size: 1.1rem !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.header-btn:hover,
+#theme-toggle:hover,
+#rtl-toggle:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  transform: translateY(-2px);
+}
+
+.header-btn::after,
+#theme-toggle::after,
+#rtl-toggle::after {
+  display: none !important;
 }
 
 /* 4. NAVBAR (Sticky & Premium) */
@@ -425,28 +504,57 @@ img {
 
 
 
-/* Centered Navbar without overlap */
+/* 2. Header Menu Center Alignment (Desktop and Mobile) */
 @media (min-width: 1200px) {
-  .navbar>.container {
+  .navbar-premium > .container {
     display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
   }
 
   .navbar-brand {
-    flex: 1;
-    min-width: 200px;
+    flex: 0 0 auto;
+    z-index: 2;
   }
 
   #mainNav {
-    flex: 2;
+    flex: 1 1 auto;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  #mainNav>.d-flex {
-    flex: 1;
-    justify-content: flex-end;
-    min-width: 350px;
+  #mainNav .navbar-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  #mainNav .header-actions,
+  #mainNav > .d-flex {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  [dir="rtl"] #mainNav .navbar-nav {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  [dir="rtl"] #mainNav .header-actions,
+  [dir="rtl"] #mainNav > .d-flex {
+    margin-right: auto !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -464,13 +572,13 @@ img {
   }
 }
 
-/* 3. Hamburger Menu Background (1024px to mob view) */
+/* 3. Hamburger Menu Background & Centered Mobile Menu */
 @media (max-width: 1199px) {
   .navbar-collapse {
     background-color: var(--bg-card);
-    padding: 1rem;
+    padding: 1.25rem 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     z-index: 1000;
     margin-top: 10px;
     position: absolute;
@@ -480,7 +588,20 @@ img {
   }
 
   .navbar-nav {
-    align-items: flex-start;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: inline-block;
+    text-align: center;
   }
 }
 
@@ -596,9 +717,8 @@ img {
   }
 }
 
-/* 11. 1024px kep footer 2 col per row */
-@media (max-width: 1024px) {
-
+/* 11. Tablet view (768px - 1024px) keep footer 2 col per row */
+@media (min-width: 768px) and (max-width: 1024px) {
   .footer-premium .col-lg-4,
   .footer-premium .col-lg-2,
   .footer-premium .col-lg-3 {
@@ -606,3 +726,122 @@ img {
     max-width: 50%;
   }
 }
+
+/* 1. Mobile view footer: Keep ONE col per row */
+@media (max-width: 767.98px) {
+  .footer-premium .row > [class*="col-"],
+  .footer-premium .col-lg-4,
+  .footer-premium .col-lg-2,
+  .footer-premium .col-lg-3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+
+  .footer-premium .row > [class*="col-"]:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* 12. Link Hover Styles (Proven Results, Global Reach, Services Page, Premium Cards) */
+.premium-card a:not(.btn-premium) {
+  color: var(--accent-color) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.premium-card a:not(.btn-premium):hover {
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+[data-theme="dark"] .premium-card a:not(.btn-premium):hover {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* Specific section link hover enhancements */
+.text-accent.fw-medium:hover,
+a.text-accent:hover {
+  color: var(--primary-color) !important;
+  text-decoration: underline !important;
+}
+
+[data-theme="dark"] .text-accent.fw-medium:hover,
+[data-theme="dark"] a.text-accent:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+/* 13. Testimonial Avatars (Consistent Circle Sizing) */
+.testimonial-avatar,
+.rounded-circle[width="52"],
+.rounded-circle[width="60"] {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* 14. Tablet View (and Mobile) Center Links for Sections */
+@media (max-width: 991px) {
+  /* Center links inside cards for Tailored Engagement Models, Strategy Built Around, Sector-Specific Expertise, and Global Reach */
+  .premium-card a:not(.btn-premium) {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: fit-content !important;
+  }
+
+  /* Center the bottom bar in Real Expansions. Real Results. case study cards (border-top area with metric + Read More) */
+  .premium-card .border-top.d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .premium-card .border-top.d-flex > div {
+    text-align: center !important;
+  }
+
+  .premium-card .border-top.d-flex a {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+    text-align: center !important;
+  }
+
+  /* Global Reach & Native Expertise section: center the explore button on tablet & mobile */
+  .text-lg-end.mt-4.mt-lg-0,
+  .text-lg-end {
+    text-align: center !important;
+  }
+
+  .text-lg-end .btn-premium {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: inline-flex !important;
+  }
+}
+
+
+
+
