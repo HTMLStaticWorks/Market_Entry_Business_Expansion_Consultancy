@@ -108,3 +108,20 @@
   fill: var(--accent-color);
   transform: translateY(-3px) scale(1.1);
 }
+
+
+/* CLIENT REVIEW FIXES — differentiated dark surfaces and accessible contrast */
+[data-theme="dark"] section:nth-of-type(even) { background-color: #10212B !important; }
+[data-theme="dark"] section:nth-of-type(odd) { background-color: #0B151C !important; }
+[data-theme="dark"] .review-section { background-color:#132833 !important; }
+[data-theme="dark"] .review-card,
+[data-theme="dark"] .premium-card { background-color:#172D38 !important; border-color:rgba(255,255,255,.12) !important; }
+[data-theme="dark"] .review-section .section-kicker,
+[data-theme="dark"] .eyebrow { color:#E4C77E !important; }
+[data-theme="dark"] .btn-premium { color:#fff !important; }
+[data-theme="dark"] .navbar-premium #theme-toggle,
+[data-theme="dark"] .navbar-premium #rtl-toggle { background:#172D38; border-color:rgba(255,255,255,.18); color:#F4F7F6 !important; }
+[data-theme="dark"] .navbar-premium .nav-link.active { color:#E4C77E !important; }
+[data-theme="dark"] .accordion-item { background:#172D38 !important; color:var(--text-primary) !important; border-color:rgba(255,255,255,.12) !important; }
+[data-theme="dark"] .accordion-button { color:var(--text-primary) !important; }
+[data-theme="dark"] .accordion-button:not(.collapsed) { background:#203B48 !important; }
